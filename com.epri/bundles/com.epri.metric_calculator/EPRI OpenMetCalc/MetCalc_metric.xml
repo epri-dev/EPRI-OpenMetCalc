@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><metric_config>
+    <metrics>
+        <metric description="A numerical value between 0 and 10, indicating the effectiveness of the overall security incident response and recovery capability." id="S-RS" name="Response Score" reference_value="5.0" target_value="6.5" value="NONE">
+            <factor description="W-T-IRS" name="W-T-IRS" value="1.0"/>
+        </metric>
+        <metric description="A numerical value between 0 and 10, indicating the effectiveness of the overall protective controls in a target system." id="S-PS" name="Protection Score" reference_value="7.0" target_value="4.0" value="NONE">
+            <factor description="Weight for T-NPPS" name="W-T-NPPS" value="0.0"/>
+            <factor description="Weight for T-EPS" name="W-T-EPS" value="0.0"/>
+            <factor description="Weight for T-PAS" name="W-T-PAS" value="0.0"/>
+            <factor description="Weight for T-HSS" name="W-T-HSS" value="0.0"/>
+            <factor description="Weight for T-NVS" name="W-T-NVS" value="0.0"/>
+            <factor description="Weight for T-NAS" name="W-T-NAS" value="0.0"/>
+            <factor description="Weight for T-DPS" name="W-T-DPS" value="0.0"/>
+            <factor description="Weight for O-I-MTBI" name="W-O-I-MTBI" value="0.0"/>
+        </metric>
+        <metric description="A numerical value indicating the effectiveness of network perimeter protection controls. The security controls in place for perimeter protection are measured and balanced with the risk level associated with the control. These are controls on network access points (wired or wireless), and for internet traffics through the perimeter (http proxy, email filter, etc.)." id="T-NPPS" name="Network Perimeter Protection Score" reference_value="7.0" target_value="3.0" value="NONE">
+            <factor description="Weight for O-N-MAPS" name="W-O-N-MAPS" value="0.0"/>
+            <factor description="Weight for O-N-MWAPS" name="W-O-N-MWAPS" value="0.0"/>
+            <factor description="Weight for O-N-MIPS" name="W-O-N-MIPS" value="0.0"/>
+            <factor description="Weight for O-I-ICME" name="W-O-I-ICME" value="0.0"/>
+            <factor description="Weight for O-I-ICMU" name="W-O-I-ICMU" value="0.0"/>
+            <factor description="Weight for O-I-ICNP" name="W-O-I-ICNP" value="0.0"/>
+        </metric>
+        <metric description="A numerical value indicating the effectiveness of the access control in a network. The status of access control is calculated with the respect to the network connectivity and proximity, capturing the control in place through network design as well as access control to a device itself." id="T-NAS" name="Core Network Access Control Score" reference_value="5.0" target_value="6.5" value="NONE">
+            <factor description="W-O-A-MAC" name="W-O-A-MAC" value="1.0"/>
+            <factor description="W-O-A-MAP" name="W-O-A-MAP" value="1.0"/>
+            <factor description="W-O-A-MACS" name="W-O-A-MACS" value="1.0"/>
+            <factor description="W-O-A-MNACS" name="W-O-A-MNACS" value="5.0"/>
+            <factor description="W-O-I-ICNP" name="W-O-I-ICNP" value="5.0"/>
+        </metric>
+        <metric description="A numerical value indicating the vulnerability control in a network. The risk of a vulnerability is calculated with the respect to the network connectivity and proximity, capturing the controls in place through network design as well as patching." id="T-NVS" name="Core Network Vulnerability Control Score" reference_value="5.0" target_value="6.5" value="NONE">
+            <factor description="W-O-A-MAC" name="W-O-A-MAC" value="1.0"/>
+            <factor description="W-O-A-MAP" name="W-O-A-MAP" value="1.0"/>
+            <factor description="W-O-A-MVRS" name="W-O-A-MVRS" value="1.0"/>
+            <factor description="W-O-A-MNVRS" name="W-O-A-MNVRS" value="5.0"/>
+            <factor description="W-O-I-ICNP" name="W-O-I-ICNP" value="5.0"/>
+        </metric>
+        <metric description="A numerical value indicating the level of situational awareness and effectiveness of threat intelligence management." id="T-TAS" name="Threat Awareness Score" reference_value="5.0" target_value="6.5" value="NONE">
+            <factor description="W-O-T-TIES" name="W-O-T-TIES" value="2.0"/>
+            <factor description="W-O-T-MTIA" name="W-O-T-MTIA" value="1.0"/>
+            <factor description="W-O-T-MTIP" name="W-O-T-MTIP" value="1.0"/>
+            <factor description="W-O-T-THES" name="W-O-T-THES" value="2.0"/>
+        </metric>
+        <metric description="It is the average Asset Connectivity of all assets in a target network. Asset Connectivity represents the degree of connectivity within a network. Generally higher asset connectivity is associated with higher risk." id="O-A-MAC" name="Mean Asset Connectivity" reference_value="5.0" target_value="6.5" value="NONE"/>
+        <metric description="A numerical value indicating the effectiveness of incident response program. This score relies heavily on the accurate incident response/tracking data." id="T-IRS" name="Incident Response Score" reference_value="5.0" target_value="6.5" value="NONE">
+            <factor description="Weight for O-I-MTTC" name="W-O-I-MTTC" value="3.0"/>
+            <factor description="Weight for O-I-MTTR" name="W-O-I-MTTR" value="3.0"/>
+            <factor description="Weight for O-I-MTTA" name="W-O-I-MTTA" value="3.0"/>
+            <factor description="Weight for O-I-MCRM" name="W-O-I-MCRM" value="0.5"/>
+            <factor description="Weight for O-I-MCRX" name="W-O-I-MCRX" value="0.5"/>
+        </metric>
+        <metric description="A numerical value indicating the effectiveness of end-point device protection controls. The security controls in place for end-point protection for both stationary and mobile end-points are measured and balanced with the risk level associated with the controls. These include anti-malware software configuration, mobile device management and host-based firewall management." id="T-EPS" name="End-point Protection Score" reference_value="5.0" target_value="6.5" value="NONE">
+            <factor description="Weight for O-U-MSDPS" name="W-O-U-MSDPS" value="2.0"/>
+            <factor description="Weight for O-U-MMDPS" name="W-O-U-MMDPS" value="2.0"/>
+            <factor description="Weight for O-I-MCMW" name="W-O-I-ICMW" value="5.0"/>
+            <factor description="Weight for O-I-MCMD" name="W-O-I-ICSD" value="5.0"/>
+            <factor description="Weight for O-I-MCSD" name="W-O-I-ICMD" value="5.0"/>
+        </metric>
+        <metric description="It is the average Asset Proximity of all assets in a target network. Asset Proximity represents how close an asset is logically located to a hostile network. A lower proximity indicates higher risk." id="O-A-MAP" name="Mean Asset Proximity to Hostile Network" reference_value="5.0" target_value="6.5" value="NONE"/>
+        <metric description="A numerical value indicating the effectiveness of physical access controls. The security controls in place for physical access control are measured and balanced with the risk level associated with the controls. Number of people with the physical access, authorization of access, and controls in place to prevent unauthorized access are among the considerations in measuring the effectiveness." id="T-PAS" name="Physical Access Control Score" reference_value="5.0" target_value="6.5" value="NONE">
+            <factor description="Weight for O-A-MPACS" name="W-O-A-MPACS" value="3.0"/>
+            <factor description="Weight for O-I-PAV" name="W-O-I-IPAV" value="2.0"/>
+        </metric>
+        <metric description="It is the average Asset Vulnerability Risk Score of all assets in a target network. The Asset Vulnerability Risk Score is the sum of the Common Vulnerability Scoring System (CVSS) of all vulnerabilities discovered in the asset. A high Asset Vulnerability Risk Score indicates high risk to the asset." id="O-A-MNVRS" name="Mean Network Vulnerability Risk Score" reference_value="5.0" target_value="6.5" value="NONE"/>
+        <metric description="A numerical value indicating the effectiveness of human security components. The frequency and completeness of security awareness training, phishing test performance, number of incidents involving social engineering, and number of incidents first detected by employee or other personnel." id="T-HSS" name="Human Security Score" reference_value="5.0" target_value="6.5" value="NONE">
+            <factor description="Weight for O-H-MHSS" name="W-O-H-MHSS" value="3.0"/>
+            <factor description="Weight for O-I-ICSE" name="W-O-I-ICSE" value="2.0"/>
+            <factor description="Weight for O-I-CNSR" name="W-O-I-CNSR" value="2.0"/>
+        </metric>
+        <metric description="It is the average Asset Vulnerability Risk Score of all assets in a target network. The Asset Vulnerability Risk Score is the sum of the Common Vulnerability Scoring System (CVSS) of all vulnerabilities discovered in the asset. A high Asset Vulnerability Risk Score indicates high risk to the asset." id="O-A-MVRS" name="Mean Asset Vulnerability Risk Score" reference_value="5.0" target_value="6.5" value="NONE"/>
+        <metric description="A numerical value indicating the effectiveness of threat detection in both technical and procedural perspectives. This score relies heavily on the accurate incident response, tracking data." id="T-TDS" name="Threat Detection Score" reference_value="5.0" target_value="6.5" value="NONE">
+            <factor description="W-O-T-TITP" name="W-O-T-TITP" value="2.0"/>
+            <factor description="W-O-E-ETP" name="W-O-E-ETP" value="2.0"/>
+            <factor description="W-O-T-THTP" name="W-O-T-THTP" value="2.0"/>
+            <factor description="W-O-I-MTTD" name="W-O-I-MTTD" value="3.0"/>
+            <factor description="W-O-I-CMISS" name="W-O-I-CMISS" value="3.0"/>
+            <factor description="W-O-T-TIAR" name="W-O-T-TIAR" value="1.0"/>
+            <factor description="W-O-I-CIH" name="W-O-I-CIH" value="1.0"/>
+        </metric>
+        <metric description="It is the average Physical Access Control Score of all assets in a network. The Physical Access Control Score represents the effectiveness of physical access controls for the asset." id="O-A-MPACS" name="Mean Physical Access Control Score" reference_value="5.0" target_value="6.5" value="NONE">
+            <factor description="" name="Max-NumBarrier" value="4.0"/>
+            <factor description="" name="Max-NumEmp" value="500.0"/>
+        </metric>
+        <metric description="It is the average Data Integrity Score for all databases in a target network. The Data Integrity Score represents the extent of controls against unauthorized or accidental modification of the data stored in the database." id="O-D-MDIS" name="Mean Data Integrity Score" reference_value="5.0" target_value="6.5" value="NONE"/>
+        <metric description="It is the average Data Availability Score for all databases in a target network. The Data Availability Score represents the effectiveness of controls against data loss or unavailability for the database." id="O-D-MDAS" name="Mean Data Availability Score" reference_value="5.0" target_value="6.5" value="NONE"/>
+        <metric description="It is the average Access Control Score of all assets in a target network. The Access Control Score is higher where there is a higher degree of controls preventing possible unauthorized access." id="O-A-MACS" name="Mean Asset Access Control Score" reference_value="5.0" target_value="6.5" value="NONE">
+            <factor description="Weight assigned for unauthorized account" name="W-default" value="0.9"/>
+            <factor description="Weight assigned for active system-privileged accounts" name="W-private" value="0.5"/>
+            <factor description="Weight assigned for active shared accounts" name="W-shared" value="0.7"/>
+            <factor description="Weight assigned for active shared system-privileged accounts" name="W-sharedPriv" value="0.8"/>
+            <factor description="Weight assigned for active accounts with no password expiry" name="W-noPassExprd" value="0.6"/>
+            <factor description="Weight assigned for active accounts with expired password" name="W-passExprd" value="0.4"/>
+            <factor description="Weight assigned for unauthorized login to the system" name="W-unauth" value="0.7"/>
+        </metric>
+        <metric description="It is the average Access Point Protection Score of all access points in a target network. The Access Protection Score must be calculated first for each access point from the numerical value representing security controls and risk associated with the access point." id="O-N-MAPS" name="Mean Access Point Protection Score" reference_value="5.0" target_value="6.5" value="NONE">
+            <factor description="Weight assigned for connection drop rate" name="W-dropRate" value="1.0"/>
+            <factor description="Weight assigned for alerts" name="W-alertRate" value="2.0"/>
+            <factor description="Weight assigned for probes" name="W-probRate" value="3.0"/>
+            <factor description="Weight assigned for DOS attempts" name="W-dos" value="4.0"/>
+            <factor description="Weight assigned for intrusion attempts" name="W-intrusion" value="4.0"/>
+            <factor description="Weight assigned for human interventions" name="W-humanInt" value="3.0"/>
+            <factor description="Weight assigned for network access control" name="W-nac" value="4.0"/>
+        </metric>
+        <metric description="It is the average Data Confidentiality Score for all databases in a target network. The Data Confidentiality Score represents the effectiveness of controls against the unauthorized disclosure of data stored in the database." id="O-D-MDCS" name="Mean Data Confidentiality Score" reference_value="5.0" target_value="6.5" value="NONE"/>
+        <metric description="It is the average Network Access Control Score of all assets in a target network. This value represents the Asset Access Control Score augmented by the Asset Connectivity and Asset Proximity to Hostile Network. A Higher Network Access Control Score indicates a higher degree of control and lower risk." id="O-A-MNACS" name="Mean Network Access Control Score" reference_value="5.0" target_value="6.5" value="NONE"/>
+        <metric description="It is the average Wireless Access Point Protection Score of all wireless access points in a target network. The Wireless Access Protection Score must be calculated first for each wireless access point from the numerical value representing security controls and risk associated with the wireless access point." id="O-N-MWAPS" name="Mean Wireless Access Point Protection Score" reference_value="5.0" target_value="6.5" value="NONE">
+            <factor description="Weight assigned for connection drop rate" name="W-dropRate" value="1.0"/>
+            <factor description="Weight assigned for alerts" name="W-alertRate" value="2.0"/>
+            <factor description="Weight assigned for probes" name="W-probRate" value="3.0"/>
+            <factor description="Weight assigned for DOS attempts" name="W-dos" value="4.0"/>
+            <factor description="Weight assigned for intrusion attempts" name="W-intrusion" value="4.0"/>
+            <factor description="Weight assigned for human interventions" name="W-humanInt" value="3.0"/>
+            <factor description="Weight assigned for network access control" name="W-nac" value="4.0"/>
+            <factor description="Weight assigned for wireless encryption" name="W-encrypt" value="4.0"/>
+            <factor description="Weight assigned for wireless antenna type" name="W-atype" value="3.0"/>
+            <factor description="Weight assigned for wireless frequency hoping" name="W-freq" value="1.0"/>
+        </metric>
+        <metric description="It is the numeric value indicating the effectiveness of security control involving human agents. Security awareness of individuals handling cyber assets and the security test results are considered in calculating this score." id="O-H-MHSS" name="Mean Human Security Score" reference_value="5.0" target_value="6.5" value="NONE">
+            <factor description="W-priv" name="W-priv" value="3.0"/>
+            <factor description="W-phy" name="W-phy" value="1.0"/>
+            <factor description="W-read" name="W-read" value="2.0"/>
+            <factor description="W-write" name="W-write" value="3.0"/>
+            <factor description="W-train" name="W-train" value="1.0"/>
+        </metric>
+        <metric description="It is the numerical value representing the effectiveness of security controls on the stationary end-point." id="O-U-MSDPS" name="Mean Stationary End-Point Protection Scoref" reference_value="5.0" target_value="6.5" value="NONE">
+            <factor description="Weight assigned for anti-virus signature update frequency" name="W-update" value="1.0"/>
+            <factor description="Weight assigned for anti-virus scan frequency" name="W-scan" value="1.0"/>
+            <factor description="Weight assigned for proportion of applications exempt from anti-virus scan" name="W-app" value="1.0"/>
+            <factor description="Weight assigned for files/folders/drives exempt from anti-virus scan" name="W-file" value="1.0"/>
+            <factor description="Weight assigned for HIDS management" name="W-hids" value="0.33"/>
+            <factor description="Weight assigned for critical access" name="W-access" value="2.0"/>
+        </metric>
+        <metric description="It is the average Internet Traffic Protection Score of all internet traffic filtering devices in a target network. The score represents the extent of internet traffic controls in place such as DNS filtering, email filtering and web proxies." id="O-N-MIPS" name="Mean Internet Traffic Protection Score" reference_value="5.0" target_value="6.5" value="NONE">
+            <factor description="Weight assigned for social network sites allowed" name="W-sns" value="1.0"/>
+            <factor description="Weight assigned for web proxy rate" name="W-proxy" value="3.0"/>
+            <factor description="Weight assigned for private email access" name="W-priveMail" value="1.0"/>
+            <factor description="Weight assigned for private cloud storage" name="W-cloud" value="1.0"/>
+            <factor description="Weight assigned for filtered emails" name="W-filter" value="5.0"/>
+            <factor description="Weight assigned for number of spams detected" name="W-spam" value="2.0"/>
+            <factor description="Weight assigned for phishing email detected" name="W-phishing" value="2.0"/>
+            <factor description="Weight assigned for malware email detected" name="W-malware" value="2.0"/>
+            <factor description="Weight assigned for spams missed" name="W-spamMiss" value="4.0"/>
+            <factor description="Weight assigned for phishing emails missed" name="W-phishingMiss" value="5.0"/>
+            <factor description="Weight assigned for malware emails missed" name="W-malwareMiss" value="5.0"/>
+            <factor description="Weight assigned for data lost or leaked through email" name="W-dataloss" value="4.0"/>
+            <factor description="W-maliciousMail" name="W-maliciousMail" value="5.0"/>
+            <factor description="W-maliciousMiss" name="W-maliciousMiss" value="5.0"/>
+            <factor description="W-privetMail" name="W-privetMail" value="1.0"/>
+        </metric>
+        <metric description="It is the numerical value representing the effectiveness of security controls on the mobile end-point." id="O-U-MMDPS" name="Mean Mobile End-Point Protection Score" reference_value="5.0" target_value="6.5" value="NONE">
+            <factor description="W-update" name="W-update" value="1.0"/>
+            <factor description="W-scan" name="W-scan" value="1.0"/>
+            <factor description="W-app" name="W-app" value="1.0"/>
+            <factor description="W-file" name="W-file" value="1.0"/>
+            <factor description="W-hids" name="W-hids" value="1.0"/>
+            <factor description="W-access" name="W-access" value="5.0"/>
+            <factor description="W-encrypt" name="W-encrypt" value="3.0"/>
+            <factor description="W-theft" name="W-theft" value="3.0"/>
+            <factor description="W-pol" name="W-pol" value="3.0"/>
+        </metric>
+        <metric description="The average time in days from the first occurrence of an incident to the first discovery of the incident. The day of first occurrence is usually found after the discovery through investigation." id="O-I-MTTD" name="Mean Time to Discovery" reference_value="5.0" target_value="6.5" value="NONE"/>
+        <metric description="The average time in days from the discovery of an incident to the first action taken." id="O-I-MTTA" name="Mean Time to First Action" reference_value="5.0" target_value="6.5" value="NONE"/>
+        <metric description="The average time in days between two incidents." id="O-I-MTBI" name="Mean Time between Incidents" reference_value="5.0" target_value="6.5" value="NONE"/>
+        <metric description="It is the average time in days from the discovery of an incident to the containment of the incident." id="O-I-MTTC" name="Mean Time to Containment" reference_value="5.0" target_value="6.5" value="NONE"/>
+        <metric description="The average time in days from the day threat intelligence warning is received to the day the first action was taken by the receiving organization." id="O-T-MTIA" name="Mean Time from Intelligence to Action" reference_value="5.0" target_value="6.0" value="NONE"/>
+        <metric description="The average time in days from the day threat intelligence warning is received to the day the organization completed the protective action." id="O-T-MTIP" name="Mean Time from Intelligence to Protection" reference_value="5.0" target_value="6.5" value="NONE"/>
+        <metric description="It is the average monthly True Positive Rate for threat hunting investigations for a calendar year. The True Positive Rate is the number of threat hunting that lead to the discovery of security incidents over the number of all threat hunting investigations launched in the period." id="O-T-THTP" name="Mean Threat Hunting True Positive Rate" reference_value="5.0" target_value="6.5" value="NONE"/>
+        <metric description="A numerical value indicating the effectiveness of threat hunting practices. A high score indicates a high degree of effectiveness." id="O-T-THES" name="Threat Hunting Effectiveness Score" reference_value="5.0" target_value="6.5" value="NONE">
+            <factor description="W-NumEmp" name="W-thNumEmp" value="1.0"/>
+            <factor description="W-thPractice" name="W-thPractice" value="1.0"/>
+            <factor description="W-thCount" name="W-thCount" value="2.0"/>
+            <factor description="W-o_t_thtp" name="W-o_t_thtp" value="5.0"/>
+            <factor description="W-th" name="W-th" value="2.0"/>
+            <factor description="W-bu" name="W-bu" value="5.0"/>
+        </metric>
+        <metric description="A numerical value indicating the effectiveness of data protection in a network. This is a mean value of confidentiality score, availability score and integrity score of all databases in the network." id="T-DPS" name="Data Protection Score" reference_value="5.8" target_value="5.2" value="NONE">
+            <factor description="W-O-D-MDCS" name="W-O-D-MDCS" value="2.0"/>
+            <factor description="W-O-D-MDIS" name="W-O-D-MDIS" value="2.0"/>
+            <factor description="W-O-D-MDAS" name="W-O-D-MDAS" value="2.0"/>
+            <factor description="W-O-I-ICDL" name="W-O-I-ICDL" value="1.0"/>
+        </metric>
+        <metric description="It is a numerical value representing the threat/situational awareness of an organization. A high score indicates high awareness of security threats/risks." id="O-T-TIES" name="Threat Intelligence Effectiveness Score" reference_value="4.5" target_value="6.0" value="NONE">
+            <factor description="W-formal" name="W-formal" value="2.0"/>
+            <factor description="W-informal" name="W-informal" value="1.0"/>
+            <factor description="W-o_t_tiar" name="W-o_t_tiar" value="2.0"/>
+            <factor description="W-div" name="W-div" value="5.0"/>
+            <factor description="W-bu" name="W-bu" value="2.0"/>
+        </metric>
+        <metric description="It is the average value of true positive rate for all threat intelligence sources for an organization. The True Positive Rate is the number of threat intelligence warnings that are confirmed to lead to security incidents over the number of all threat intelligences generated by the source." id="O-T-TITP" name="Threat Intelligence True Positive Rate" reference_value="5.0" target_value="6.0" value="NONE"/>
+        <metric description="It is the average value of True Positive Rate for all security event generating devices in a target network. The True Positive Rate is the number of security events that are confirmed as genuine security incidents over the number of all events generated by the device. A Higher True Positive Rate indicates higher accuracy." id="O-E-ETP" name="Mean Security Event True Positive Rate" reference_value="6.0" target_value="5.0" value="NONE"/>
+        <metric description="It is the average monthly count of security incidents involving malware infection for a calendar year." id="O-I-ICMW" name="Monthly Incident Count – Malware" reference_value="5.0" target_value="6.0" value="NONE"/>
+        <metric description="It is the average monthly count of security incidents involving stationary end-point for a calendar year." id="O-I-ICSD" name="Monthly Incident Count - Stationary End-Point" reference_value="5.0" target_value="6.0" value="NONE"/>
+        <metric description="An average monthly count of security incidents involving mobile end-point for a calendar year." id="O-I-ICMD" name="Monthly Incident Count - Mobile End-Point" reference_value="5.0" target_value="6.0" value="NONE"/>
+        <metric description="An average monthly count of security incidents involving physical access violation for a calendar year." id="O-I-IPAV" name="Monthly Incident Count - Physical Access Violation" reference_value="6.5" target_value="6.0" value="NONE"/>
+        <metric description="An average monthly count of security incidents involving social engineering for a calendar year." id="O-I-ICSE" name="Monthly Incident Count - Social Engineering" reference_value="5.5" target_value="4.5" value="NONE"/>
+        <metric description="It is the average monthly count of security incidents involving network penetration for a calendar year." id="O-I-ICNP" name="Monthly Incident Count - Network Penetration" reference_value="6.5" target_value="6.0" value="NONE"/>
+        <metric description="It is the average monthly count of security incidents involving malicious email for a calendar year." id="O-I-ICME" name="Monthly Incident Count - Malicious Email" reference_value="5.5" target_value="6.0" value="NONE"/>
+        <metric description="It is the average monthly count of security incidents involving malicious URL for a calendar year." id="O-I-ICMU" name="Monthly Incident Count - Malicious URL" reference_value="6.0" target_value="5.5" value="NONE"/>
+        <metric description="It is the average monthly count of security incidents involving data leak or loss for a calendar year." id="O-I-ICDL" name="Monthly Incident Count - Data Leak/Loss" reference_value="6.0" target_value="5.7" value="NONE"/>
+        <metric description="It is the average time in days from the discovery of an incident to the complete recovery from the incident." id="O-I-MTTR" name="Mean Time to Recovery" reference_value="6.2" target_value="5.8" value="NONE"/>
+        <metric description="It is the ratio of theat alerts in the Threat Alert Table that have completed their action/response." id="O-T-TIAR" name="Threat Intelligence Actionable Rate" reference_value="4.0" target_value="2.5" value="NONE"/>
+        <metric description="The count of threat intelligence received by an organization." id="O-T-CTI" name="Count - Threat Intelligence" reference_value="6.0" target_value="6.0" value="NONE"/>
+        <metric description="The count of threat hunting investigations." id="O-T-CTH" name="Incident Count - Threat Hunting Investigation" reference_value="6.0" target_value="6.0" value="NONE"/>
+        <metric description="TEMP" id="O-E-CE" name="TEMP" reference_value="6.0" target_value="6.0" value="NONE"/>
+        <metric description="TEMP" id="O-I-CIT" name="TEMP" reference_value="6.0" target_value="6.0" value="NONE"/>
+        <metric description="It is the count of missed security incidents. Missed security incidents include the incidents first noticed by malfunction of device, non-security staff report, compromise notification, adversary notification or public disclosure." id="O-I-CMISS" name="Incident Count - Missed Security Incidents" reference_value="5.0" target_value="4.0" value="NONE"/>
+        <metric description="It is the count of incidents, first detected by non-security staff reporting." id="O-I-CNSR" name="Incident Count - Non-Security Staff Reporting" reference_value="7.0" target_value="5.5" value="NONE"/>
+        <metric description="It is the count of high severity security incidents." id="O-I-CIH" name="Incident Count - High Severity" reference_value="5.0" target_value="6.0" value="NONE"/>
+        <metric description="TEMP" id="O-I-CIM" name="TEMP" reference_value="6.0" target_value="6.0" value="NONE"/>
+        <metric description="It is the average email server filtering score representing the extent and effectiveness&#10;of the email server filters." id="O-N-MMFS" name="Mean Email Server Filtering Score" reference_value="6.0" target_value="6.0" value="NONE">
+            <factor description="W-filter" name="W-filter" value="5.0"/>
+            <factor description="W-spam" name="W-spam" value="2.0"/>
+            <factor description="W-phishing" name="W-phishing" value="2.0"/>
+            <factor description="W-malware" name="W-malware" value="2.0"/>
+            <factor description="W-spamMiss" name="W-spamMiss" value="4.0"/>
+            <factor description="W-phishingMiss" name="W-phishingMiss" value="5.0"/>
+            <factor description="W-malwareMiss" name="W-malwareMiss" value="5.0"/>
+            <factor description="W-dataloss" name="W-dataloss" value="4.0"/>
+        </metric>
+        <metric description="It is the average web proxy score representing the extent and effectiveness of the web proxies." id="O-N-MWPX" name="Mean Web Proxy Score" reference_value="6.0" target_value="6.0" value="NONE">
+            <factor description="W-proxy" name="W-proxy" value="3.0"/>
+            <factor description="W-sns" name="W-sns" value="1.0"/>
+            <factor description="W-privetMail" name="W-priveMail" value="1.0"/>
+            <factor description="W-cloud" name="W-cloud" value="1.0"/>
+        </metric>
+        <metric description="A numerical value between 0 and 10, indicating the effectiveness of the overall detective controls in a target system." id="S-DS" name="Detection Score" reference_value="8.0" target_value="5.0" value="NONE">
+            <factor description="Weight for T-TAS" name="W-T-TAS" value="2.0"/>
+            <factor description="Weight for T-TDS" name="W-T-TDS" value="5.0"/>
+        </metric>
+    </metrics>
+    <metric_relationship>
+        <S-DS weight="0.0">
+            <T-TAS weight="2.0">
+                <O-T-MTIA weight="1.0"/>
+                <O-T-MTIP weight="1.0"/>
+                <O-T-THES weight="2.0"/>
+                <O-T-TIES weight="0.0"/>
+            </T-TAS>
+            <T-TDS weight="5.0">
+                <O-E-ETP weight="0.0"/>
+                <O-I-MTTD weight="7.0"/>
+                <O-I-CMISS weight="0.0"/>
+                <O-I-CIH weight="0.0"/>
+                <O-T-TITP weight="0.0"/>
+                <O-T-THTP weight="1.0"/>
+                <O-T-TIAR weight="0.0"/>
+            </T-TDS>
+        </S-DS>
+        <S-PS weight="1.0">
+            <T-DPS weight="0.0">
+                <O-I-ICDL weight="0.0"/>
+                <O-D-MDAS weight="2.0"/>
+                <O-D-MDIS weight="2.0"/>
+                <O-D-MDCS weight="2.0"/>
+            </T-DPS>
+            <T-NAS weight="1.0">
+                <O-I-ICNP weight="0.0"/>
+                <O-A-MNACS weight="5.0"/>
+                <O-A-MACS weight="1.0"/>
+                <O-A-MAP weight="1.0"/>
+                <O-A-MAC weight="1.0"/>
+            </T-NAS>
+            <T-NVS weight="1.0">
+                <O-A-MNVRS weight="5.0"/>
+                <O-A-MVRS weight="1.0"/>
+                <O-A-MAP weight="1.0"/>
+                <O-A-MAC weight="1.0"/>
+                <O-I-ICNP weight="0.0"/>
+            </T-NVS>
+            <T-HSS weight="1.0">
+                <O-H-MHSS weight="3.0"/>
+                <O-I-ICSE weight="0.0"/>
+                <O-I-CNSR weight="0.0"/>
+            </T-HSS>
+            <T-PAS weight="1.0">
+                <O-A-MPACS weight="3.0"/>
+                <O-I-IPAV weight="0.0"/>
+            </T-PAS>
+            <T-EPS weight="1.0">
+                <O-U-MMDPS weight="2.0"/>
+                <O-U-MSDPS weight="2.0"/>
+                <O-I-ICSD weight="0.0"/>
+                <O-I-ICMD weight="0.0"/>
+                <O-I-ICMW weight="0.0"/>
+            </T-EPS>
+            <T-NPPS weight="1.0">
+                <O-N-MAPS weight="2.0"/>
+                <O-N-MIPS weight="2.0"/>
+                <O-N-MWAPS weight="2.0"/>
+                <O-I-ICME weight="0.0"/>
+                <O-I-ICMU weight="0.0"/>
+                <O-I-ICNP weight="0.0"/>
+            </T-NPPS>
+            <O-I-MTBI weight="1.0"/>
+        </S-PS>
+        <S-RS weight="1.0">
+            <T-IRS weight="1.0">
+                <O-I-MTTC weight="3.0"/>
+                <O-I-MTTA weight="3.0"/>
+                <O-I-MTTR weight="0.0"/>
+            </T-IRS>
+        </S-RS>
+        <O-T-CTI weight="0.0"/>
+        <O-T-CTH weight="0.0"/>
+        <O-E-CE weight="0.0"/>
+        <O-I-CIT weight="0.0"/>
+        <O-I-CIM weight="0.0"/>
+        <O-N-MMFS weight="0.0"/>
+        <O-N-MWPX weight="0.0"/>
+    </metric_relationship>
+    <data_point>
+        <Vulnerability/>
+        <Event>
+            <E01 columnName="Device ID of event generating system" columnType="Integer" defaultValue="" description=""/>
+            <E02 columnName="Severity" columnType="Integer" defaultValue="" description=""/>
+            <E03 columnName="Date Opened" columnType="Integer" defaultValue="" description=""/>
+            <E04 columnName="Date Closed" columnType="Integer" defaultValue="" description=""/>
+            <E05 columnName="Confirmed Security Incidents" columnType="Integer" defaultValue="" description=""/>
+        </Event>
+        <ThreadWarningAlert>
+            <TID columnName="ID" columnType="Integer" defaultValue="" description=""/>
+            <T01 columnName="1" columnType="Real" defaultValue="" description=""/>
+            <T02 columnName="2" columnType="Date" defaultValue="" description=""/>
+            <T03 columnName="3" columnType="Date" defaultValue="" description=""/>
+            <T04 columnName="4" columnType="Date" defaultValue="" description=""/>
+            <T05 columnName="5" columnType="Real" defaultValue="" description=""/>
+            <T06 columnName="6" columnType="Real" defaultValue="" description=""/>
+        </ThreadWarningAlert>
+        <Incident>
+            <I01 columnName="f" columnType="Date" defaultValue="" description=""/>
+            <I02 columnName="2" columnType="Date" defaultValue="" description=""/>
+            <I03 columnName="3" columnType="Date" defaultValue="" description=""/>
+            <I04 columnName="4" columnType="Date" defaultValue="" description=""/>
+            <I05 columnName="5" columnType="Date" defaultValue="" description=""/>
+        </Incident>
+        <Asset>
+            <A01 columnName="Number of internal IPs reachable" columnType="Integer" defaultValue="" description=""/>
+            <A02 columnName="Outbound connection to internet" columnType="Integer" defaultValue="" description=""/>
+            <A03 columnName="Inbound connection from the internet" columnType="Integer" defaultValue="" description=""/>
+            <A04 columnName="Distance from the internet" columnType="Integer" defaultValue="" description=""/>
+            <A05 columnName="Outbound connection to non-secure network (applicable to a protected network without internet connection)" columnType="Integer" defaultValue="" description=""/>
+            <A06 columnName="Inbound connection from non-secure network (applicable to a protected network without internet connection)" columnType="Integer" defaultValue="" description=""/>
+            <A07 columnName="Distance from the non-secure network (applicable to a protected network without internet connection)" columnType="Integer" defaultValue="" description=""/>
+            <A08 columnName="Asset Criticality Rating" columnType="Integer" defaultValue="" description=""/>
+            <A09 columnName="Number of active default account/password" columnType="Integer" defaultValue="" description=""/>
+            <A10 columnName="Number of active system-privileged accounts" columnType="Integer" defaultValue="" description=""/>
+            <A11 columnName="Number of active shared accounts (shared password or no password)" columnType="Integer" defaultValue="" description=""/>
+            <A12 columnName="Number of active shared system-privileged accounts" columnType="Integer" defaultValue="" description=""/>
+            <A13 columnName="Number of active user accounts with no password expiry" columnType="Integer" defaultValue="" description=""/>
+            <A14 columnName="Number of active user accounts with expired password" columnType="Integer" defaultValue="" description=""/>
+            <A15 columnName="Number of total users who can login to the system" columnType="Integer" defaultValue="" description=""/>
+            <A16 columnName="Number of total users who are authorized to login to the system" columnType="Integer" defaultValue="" description=""/>
+            <A17 columnName="Physical: Number of people who are authorized to access the asset (can touch)" columnType="Integer" defaultValue="" description=""/>
+            <A18 columnName="Physical: Number of people who can access the asset without force" columnType="Integer" defaultValue="" description=""/>
+            <A19 columnName="Physical: Number of physical barriers to the asset from the closest public location" columnType="Integer" defaultValue="" description=""/>
+            <A20 columnName="Asset ID" columnType="Integer" defaultValue="" description=""/>
+        </Asset>
+        <Personnel/>
+        <EndUserDevice/>
+        <WebProxy/>
+        <Database>
+            <D01 columnName="Data Criticality Rating" columnType="Integer" defaultValue="" description=""/>
+            <D02 columnName="Encryption at rest" columnType="Integer" defaultValue="" description=""/>
+            <D03 columnName="Encryption in transit" columnType="Integer" defaultValue="" description=""/>
+            <D04 columnName="Mean Network Access Control Score of hosting assets" columnType="Integer" defaultValue="" description=""/>
+            <D05 columnName="Mean Network Vulnerability Control Score of hosting assets" columnType="Integer" defaultValue="" description=""/>
+            <D06 columnName="Data Redundancy" columnType="Integer" defaultValue="" description=""/>
+            <D07 columnName="Backup Frequency" columnType="Integer" defaultValue="" description=""/>
+            <D08 columnName="Native Audit Trail Enabled" columnType="Integer" defaultValue="" description=""/>
+            <D09 columnName="Audit Trail Review" columnType="Integer" defaultValue="" description=""/>
+            <D10 columnName="Segregation of duties enforced" columnType="Integer" defaultValue="" description=""/>
+            <D11 columnName="Asset ID of hosting server" columnType="Integer" defaultValue="" description=""/>
+        </Database>
+        <BusinessUnit>
+            <B01 columnName="Total number of personnel" columnType="Integer" defaultValue="" description=""/>
+            <B02 columnName="Number of personnel who participated in social engineering test" columnType="Integer" defaultValue="" description=""/>
+            <B03 columnName="Failure rate on last email phishing test" columnType="Integer" defaultValue="" description=""/>
+            <B04 columnName="Number of organizations directly providing threat intelligence under contract/agreement" columnType="Integer" defaultValue="" description=""/>
+            <B05 columnName="Number of organizations directly providing threat intelligence informally" columnType="Integer" defaultValue="" description=""/>
+            <T06 columnName="Threat hunting practice" columnType="Integer" defaultValue="" description=""/>
+            <T07 columnName="Number of employees trained for threat hunting" columnType="Integer" defaultValue="" description=""/>
+            <T08 columnName="Number of threat hunting investigation per month" columnType="Integer" defaultValue="" description=""/>
+            <T09 columnName="Business Unit ID" columnType="Integer" defaultValue="" description=""/>
+        </BusinessUnit>
+        <NetworkAccessPoint/>
+        <EmailServerFilter>
+            <M01 columnName="Email: Number of total inbound emails per day" columnType="Integer" defaultValue="" description=""/>
+            <M02 columnName="Email: Number of total outbound emails per day" columnType="Integer" defaultValue="" description=""/>
+            <M03 columnName="Email: Number of filtered emails per day" columnType="Integer" defaultValue="" description=""/>
+            <M04 columnName="Email: Number of spams detected per week" columnType="Integer" defaultValue="" description=""/>
+            <M05 columnName="Email: Number of phishing attempts detected per week" columnType="Integer" defaultValue="" description=""/>
+            <M06 columnName="Email: Number of malware detected per week" columnType="Integer" defaultValue="" description=""/>
+            <M07 columnName="Email: Number of spams reported by the user per week" columnType="Integer" defaultValue="" description=""/>
+            <M08 columnName="Email: Number of phishing attempts reported by the user per week" columnType="Integer" defaultValue="" description=""/>
+            <M09 columnName="Email: Number of malware reported by the user per week" columnType="Integer" defaultValue="" description=""/>
+            <M10 columnName="Email: Number of outbound email with sensitive data - detected per week" columnType="Integer" defaultValue="" description=""/>
+            <M11 columnName="Asset ID" columnType="Integer" defaultValue="" description=""/>
+            <M12 columnName="Date" columnType="Integer" defaultValue="" description=""/>
+        </EmailServerFilter>
+        <ThreatAlert/>
+    </data_point>
+</metric_config>

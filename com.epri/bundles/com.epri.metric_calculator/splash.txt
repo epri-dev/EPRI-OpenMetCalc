@@ -1,0 +1,17 @@
+EPRI OpenMetCalc Version #%VERSION%
+Electric Power Research Institute (EPRI)
+3420 Hillview Ave.
+Palo Alto, CA 94304
+
+Copyright © 2017 Electric Power Research Institute, Inc. All rights reserved.
+
+As a user of this EPRI preproduction software, you accept and acknowledge that:
+• This software is a preproduction version which may have problems that could potentially harm your system
+• To satisfy the terms and conditions of the Master License Agreement or Preproduction License Agreement between EPRI and your company, you understand what to do with this preproduction product after the preproduction review period has expired
+• Reproduction or distribution of this preproduction software is in violation of the terms and conditions of the Master License Agreement or Preproduction License Agreement currently in place between EPRI and your company
+• Your company's funding will determine if you have the rights to the final production release of this product
+• EPRI will evaluate all tester suggestions and recommendations, but does not guarantee they will be incorporated into the final production product
+• As a preproduction tester, you agree to provide feedback as a condition of obtaining the preproduction software
+
+Disclaimer:
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL EPRI BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.

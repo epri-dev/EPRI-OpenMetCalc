@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application
+            icon="icons/electric_16.png">
+         <run
+               class="com.epri.metric_calculator.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="com.epri.metric_calculator.perspectives.DataPointPerspective"
+            icon="icons/data_point_16.png"
+            id="com.epri.metric_calculator.perspectives.DataPointPerspective"
+            name="Data Point">
+      </perspective>
+      <perspective
+            class="com.epri.metric_calculator.perspectives.MetricPerspective"
+            icon="icons/metric_16.png"
+            id="com.epri.metric_calculator.perspectives.MetricPerspective"
+            name="Metric">
+      </perspective>
+      <perspective
+            class="com.epri.metric_calculator.perspectives.DashboardPerspective"
+            icon="icons/Dashboard_16px.png"
+            id="com.epri.metric_calculator.perspectives.DashboardPerspective"
+            name="Dashboard">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            allowMultiple="true"
+            class="com.epri.metric_calculator.views.datapoint.DataPointTableView"
+            id="com.epri.metric_calculator.views.datapoint.DataPointTableView"
+            name="Data Point Table"
+            restorable="true">
+      </view>
+      <view
+            allowMultiple="true"
+            class="com.epri.metric_calculator.views.datapoint.DataPointScopeView"
+            id="com.epri.metric_calculator.views.datapoint.DataPointScopeView"
+            name="Data Point Scope"
+            restorable="true">
+      </view>
+      <view
+            class="com.epri.metric_calculator.views.datapoint.ImportConsoleView"
+            icon="icons/monitor_16.png"
+            id="com.epri.metric_calculator.views.datapoint.ImportConsoleView"
+            name="Import console"
+            restorable="true">
+      </view>
+      <view
+            class="com.epri.metric_calculator.views.metric.CalculationConsoleView"
+            icon="icons/monitor_16.png"
+            id="com.epri.metric_calculator.views.metric.CalculationConsoleView"
+            name="Calculation console"
+            restorable="true">
+      </view>
+      <view
+            class="com.epri.metric_calculator.views.metric.MetricView"
+            id="com.epri.metric_calculator.views.metric.MetricView"
+            name="Calculate Metric"
+            restorable="true">
+      </view>
+      <view
+            class="com.epri.metric_calculator.views.dashboard.DashboardView"
+            id="com.epri.metric_calculator.views.dashboard.DashboardView"
+            name="Dashboard"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="com.epri.metric_calculator.command.Create"
+            name="Create">
+      </command>
+            <command
+            id="com.epri.metric_calculator.command.Open"
+            name="Open">
+      </command>
+      <command
+            id="com.epri.metric_calculator.command.Save"
+            name="Save">
+      </command>
+      <command
+            id="com.epri.metric_calculator.command.SaveAs"
+            name="Save As">
+      </command>
+      <command
+            id="com.epri.metric_calculator.command.ImportData"
+            name="Import Data">
+      </command>
+      <command
+            id="com.epri.metric_calculator.command.ExportData"
+            name="Export Data">
+      </command>
+      <command
+            id="com.epri.metric_calculator.command.ExportToText"
+            name="Export To Text">
+      </command>
+      <command
+            defaultHandler="com.epri.metric_calculator.handler.ReCalcurateHandler"
+            id="com.epri.metric_calculator.actions.recalculation.RecalculationAction"
+            name="Re-Calcurate">
+      </command>
+      <command
+            id="com.epri.metric_calculator.command.ImportMetric"
+            name="Import Metric">
+      </command>
+      <command
+            id="com.epri.metric_calculator.command.ExportMetric"
+            name="Export Metric">
+      </command>
+      <command
+            id="com.epri.metric_calculator.command.ExportToExcel"
+            name="Export Metric to Excel">
+      </command>
+      <command
+            id="com.epri.metric_calculator.command.SnapshotAction"
+            name="Snapshot">
+      </command>
+      <command
+            id="com.epri.metric_calculator.command.DataPointPerspectiveAction"
+            name="com.epri.metric_calculator.command.DataPointPerspectiveAction">
+      </command>
+      <command
+            id="com.epri.metric_calculator.perspectives.MetricPerspective"
+            name="com.epri.metric_calculator.perspectives.MetricPerspective">
+      </command>
+      <command
+            id="com.epri.metric_calculator.actions.file.SettingAction"
+            name="Setting">
+      </command>
+      <command
+            id="com.epri.metric_calculator.actions.export.GenerateKeyAction"
+            name="Generate Key">
+      </command>
+      <command
+            id="com.epri.metric_calculator.actions.export.ImportReferenceValueAction"
+            name="Import Reference Value">
+      </command>
+      <command
+            id="com.epri.metric_calculator.actions.export.EncryptDataPointAction"
+            name="Export Encrypted CSV">
+      </command>
+      <command
+            id="com.epri.metric_calculator.actions.export.DecryptDataPointAction"
+            name="Import Encrypted CSV">
+      </command>
+      <command
+            id="com.epri.metric_calculator.actions.metricshub.MetricsHubUploadAction"
+            name="Upload Data to Metrics Hub">
+      </command>
+      <command
+            id="com.epri.metric_calculator.actions.metricshubsetting.MetricsHubSettingAction"
+            name="Metrics Hub Setting">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <scheme
+            id="com.epri.metric_calculator.scheme"
+            name="myscheme">
+      </scheme>
+      <key
+            commandId="com.epri.metric_calculator.command.Save"
+            contextId="org.eclipse.ui.contexts.window"
+            schemeId="com.epri.metric_calculator.scheme"
+            sequence="CTRL+S">
+      </key>
+   </extension>
+   <extension
+         point="org.eclipse.ui.splashHandlers">
+      <splashHandler
+            class="com.epri.metric_calculator.splashHandlers.InteractiveSplashHandler"
+            id="com.epri.metric_calculator.splashHandlers.interactive">
+      </splashHandler>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="com.epri.metric_calculator.application"
+            name="EPRI OpenMetCalc">
+         <property
+               name="windowImages"
+               value="icons/window_16.png,icons/window_32.png,icons/window_48.png,icons/window_64.png">
+         </property>
+         <property
+               name="startupProgressRect"
+               value="5,275,445,15">
+         </property>
+         <property
+               name="appName"
+               value="EPRI OpenMetCalc">
+         </property>
+         <property
+               name="aboutText"
+               value="OpenMetCalc (EPRI Security Metrics Calculator) Version #2.2&#x0A;*****************************************************************&#x0A;Developed for:&#x0A;Electric Power Research Institute (EPRI)&#x0A;3420 Hillview Ave.&#x0A;Palo Alto, CA 94304&#x0A;&#x0A;Support:&#x0A;Copyright © 2017 Electric Power Research Institute, Inc. All Rights Reserved.&#x0A;&#x0A;Copyright:&#x0A;Permission to use, copy, modify, and distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.&#x0A;&#x0A;Developed by:&#x0A;Safe and Secure Technology, Inc.&#x0A;3003 North First Street, Suite 336 San Jose&#x0A;CA 95134 USA&#x0A;&#x0A;Disclaimer:&#x0A;THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL EPRI BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.&#x0A;&#x0A;Icons:&#x0A;Icon8 : https://icons8.com&#x0A;&#x0A;License:&#x0A;Apache License Version 2.0 http://www.apache.org/licenses/LICENSE-2.0.html&#x0A;*common-collections 4 4.1, https://commons.apache.org/collections/&#x0A;*commons-io 2.6, https://commons.apache.org/proper/commons-io/&#x0A;*guava 21.0, https://github.com/google/guava&#x0A;*j2html 1.2.2, https://github.com/tipsy/j2html/&#x0A;*JSON in Java 20180813, https://github.com/stleary/JSON-java&#x0A;*poi 3.17, https://poi.apache.org/&#x0A;*poi-ooxml, 3.17 https://poi.apache.org/&#x0A;*poi-ooxml-schemas, 3.17 https://poi.apache.org/&#x0A;*ppk 0.1.9, https://github.com/davidmoten/ppk&#x0A;*super-csv 2.4.0, http://super-csv.github.io/super-csv/index.html&#x0A;*xmlbean 2.6.0, http://xmlbeans.apache.org/&#x0A;&#x0A;Eclipse Public License 1.0 https://www.eclipse.org/legal/epl-v10.html&#x0A;*junit 4.12, http://junit.org/junit4/license.html&#x0A;&#x0A;MIT license: https://opensource.org/licenses/MIT&#x0A;*bcpg 1.5, https://www.bouncycastle.org/latest_releases.html&#x0A;*bcprov 1.5, https://www.bouncycastle.org/latest_releases.html&#x0A;*gaugejs 1.3.6, http://bernii.github.io/gauge.js/&#x0A;*chartjs 2.7.2, https://github.com/chartjs">
+         </property>
+         <property
+               name="preferenceCustomization"
+               value="plugin_customization.ini">
+         </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="com.epri.metric_calculator.preferences.SamplePreferencePage"
+            id="com.epri.metric_calculator.preferences.SamplePreferencePage"
+            name="Sample Preferences">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="com.epri.metric_calculator.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
+
+</plugin>

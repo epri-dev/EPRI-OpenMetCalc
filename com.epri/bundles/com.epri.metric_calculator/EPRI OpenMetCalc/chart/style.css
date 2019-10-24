@@ -1,0 +1,109 @@
+
+.container {
+  display:block;
+  margin:1%;
+  padding:0.2%;
+  background: #002499;
+  border-radius: 5px;
+}
+
+.container > .title {
+  height:27px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  vertical-align : middle;
+  font-size: 16px;
+  color : white;
+}
+
+.container > .body {
+  display:flex;
+  height: calc(100% - 27px);
+  overflow:auto;
+  background: white;
+  border-radius: 3px;
+}
+
+.gauge_container {
+  display:block;
+  width:25%;
+  background: white;
+}
+
+.gauge {
+  width:calc(100% - 1px);
+  margin-top:5px;
+  height:calc(100% - 5px);
+  background: white
+}
+
+#oper_metric_table {
+  font: sans-serif;
+  border-collapse: collapse;
+  white-space: nowrap;
+  width: 100%;
+  height : 100%
+}
+
+#oper_metric_table .header {
+  border: 1px solid #ddd;
+  background:#002499;
+  color : white;
+  padding: 1px;
+  font-size: 10pt;
+  text-align: center;
+
+  white-space: wrap;
+  max-width: 60px;
+}
+
+#oper_metric_table td {
+  border: 1px solid #ddd;
+  padding: 1px;
+  font-size: 8pt;
+  max-width:250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#oper_metric_table td .tooltiptext {
+  display: block;
+  position: fixed;
+  visibility: hidden;
+  overflow:hidden;
+
+  background-color: #555;
+  color: #fff;
+  
+  text-align: left;
+  border-radius: 5px;
+  padding: 5px;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+#oper_metric_table td .tooltiptext::after {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+#oper_metric_table td:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.reference-value {
+  fill : rgb(130, 2, 130)
+}
+
+.target-value {
+  fill:rgb(2, 120, 120)
+}

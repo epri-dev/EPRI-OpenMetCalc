@@ -1,0 +1,2 @@
+this is sample file to test cloning and merging
+added text to test branching, merge and pull requests
