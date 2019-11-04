@@ -1,14 +1,14 @@
-﻿To build EPRI OpenMetCalc 2.x, the following packages are required;
-	•EPRI OpenMetCalc Source
-	•JDK 1.8
-	•Maven 3.3.9
-	•Eclipse IDE for RCP 
+﻿To build EPRI OpenMetCalc 2.x, the following packages are required;  
+	•EPRI OpenMetCalc Source   
+	•JDK 1.8  
+	•Maven 3.3.9  
+	•Eclipse IDE for RCP   
 
 
-1.Prepare the environment
-a)Setting up JDK 1.8
-	1)JDK 1.8 is used to build the source code. It can be obtained from here.  For a 64-bit windows environment, please download ‘jdk-8u231-windows-x64.exe’ otherwise download ‘jdk-8u231-windows-i586.exe’. 
-	2)Double click ‘jdk-8u231-windows-x64.exe’ and follow instructions from the installation wizard in to install JDK. By default, JDK will be installed in ‘C:\Program Files\Java\jdk1.8.0_xxx’. 
+1.Prepare the environment  
+a)Setting up JDK 1.8  
+	1)JDK 1.8 is used to build the source code. It can be obtained from here.  For a 64-bit windows environment, please download ‘jdk-8u231-windows-x64.exe’ otherwise download ‘jdk-8u231-windows-i586.exe’.   
+	2)Double click ‘jdk-8u231-windows-x64.exe’ and follow instructions from the installation wizard in to install JDK. By default, JDK will be installed in ‘C:\Program Files\Java\jdk1.8.0_xxx’.   
 	3)After JDK 1.8 has been successfully installed, add the installation path to your windows systems environment. Go to “Control Panel” > “System and Security” > “System” > “Advanced system settings” > “Advanced” > “Environment Variables”. Click on New and Set the variable name to “JAVA_HOME” and variable value to your Java installation directory. 
 
 b)Setting up Maven 3.3.9
