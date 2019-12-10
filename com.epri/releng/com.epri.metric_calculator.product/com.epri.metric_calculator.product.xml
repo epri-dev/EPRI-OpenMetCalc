@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="EPRI OpenMetCalc" uid="EPRI OpenMetCalc" id="com.epri.metric_calculator.product" application="com.epri.metric_calculator.application" version="2.2.0.qualifier" useFeatures="true" includeLaunchers="true">
+
+   <aboutInfo>
+      <text>
+         OpenMetCalc (EPRI Security Metrics Calculator) Version #2.2
+*****************************************************************
+Developed for:
+Electric Power Research Institute (EPRI)
+3420 Hillview Ave.
+Palo Alto, CA 94304
+
+Support:
+Copyright © 2017 Electric Power Research Institute, Inc. All Rights Reserved.
+
+Copyright:
+Permission to use, copy, modify, and distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
+
+Developed by:
+Safe and Secure Technology, Inc.
+3003 North First Street, Suite 336 San Jose
+CA 95134 USA
+
+Disclaimer:
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL EPRI BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Icons:
+Icon8 : https://icons8.com
+
+License:
+Apache License Version 2.0 http://www.apache.org/licenses/LICENSE-2.0.html
+*common-collections 4 4.1, https://commons.apache.org/collections/
+*commons-io 2.6, https://commons.apache.org/proper/commons-io/
+*guava 21.0, https://github.com/google/guava
+*j2html 1.2.2, https://github.com/tipsy/j2html/
+*JSON in Java 20180813, https://github.com/stleary/JSON-java
+*poi 3.17, https://poi.apache.org/
+*poi-ooxml, 3.17 https://poi.apache.org/
+*poi-ooxml-schemas, 3.17 https://poi.apache.org/
+*ppk 0.1.9, https://github.com/davidmoten/ppk
+*super-csv 2.4.0, http://super-csv.github.io/super-csv/index.html
+*xmlbean 2.6.0, http://xmlbeans.apache.org/
+
+Eclipse Public License 1.0 https://www.eclipse.org/legal/epl-v10.html
+*junit 4.12, http://junit.org/junit4/license.html
+
+MIT license: https://opensource.org/licenses/MIT
+*bcpg 1.5, https://www.bouncycastle.org/latest_releases.html
+*bcprov 1.5, https://www.bouncycastle.org/latest_releases.html
+*gaugejs 1.3.6, http://bernii.github.io/gauge.js/
+*chartjs 2.7.2, https://github.com/chartjs
+      </text>
+   </aboutInfo>
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
+      </vmArgsMac>
+   </launcherArgs>
+
+   <windowImages i16="/com.epri.metric_calculator/icons/window_16.png" i32="/com.epri.metric_calculator/icons/window_32.png" i48="/com.epri.metric_calculator/icons/window_48.png" i64="/com.epri.metric_calculator/icons/window_64.png"/>
+
+   <splash
+      location="com.epri.metric_calculator"
+      startupProgressRect="5,275,445,15" />
+   <launcher name="OpenMetCalc">
+      <win useIco="true">
+         <ico path="OpenMetCalc256.ico"/>
+         <bmp/>
+      </win>
+   </launcher>
+
+
+   <vm>
+      <windows include="true">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8</windows>
+   </vm>
+
+   <plugins>
+   </plugins>
+
+   <features>
+      <feature id="com.epri.metric_calculator.feature" version="1.0.0.qualifier"/>
+      <feature id="org.eclipse.emf.ecore"/>
+      <feature id="org.eclipse.rcp"/>
+      <feature id="org.eclipse.emf.common"/>
+      <feature id="org.eclipse.e4.rcp"/>
+   </features>
+
+   <configurations>
+      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
+   </configurations>
+
+   <preferencesInfo>
+      <targetfile overwrite="false"/>
+   </preferencesInfo>
+
+   <cssInfo>
+   </cssInfo>
+
+</product>

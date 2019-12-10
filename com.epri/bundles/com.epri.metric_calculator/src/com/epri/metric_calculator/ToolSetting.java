@@ -10,8 +10,6 @@ import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 import java.util.Properties;
 
-import javax.xml.bind.JAXBException;
-
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.PlatformUI;
@@ -190,7 +188,6 @@ public class ToolSetting {
 	/**
 	 * Load tool setting
 	 * 
-	 * @throws JAXBException
 	 * @throws VersionNotFoundException
 	 * @throws IOException
 	 */

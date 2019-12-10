@@ -6,7 +6,7 @@ import org.supercsv.exception.SuperCsvCellProcessorException;
 import org.supercsv.util.CsvContext;
 
 public class ParseIntegerExt implements CellProcessor {
-	private ParseInt parseInt = null;;
+	private ParseInt parseInt = null;
 
 	public  ParseIntegerExt(){
 		parseInt = new ParseInt();
@@ -22,7 +22,11 @@ public class ParseIntegerExt implements CellProcessor {
 
 	@SuppressWarnings("unchecked")
 	public <T> T execute(Object value, CsvContext context) {
-		validateInputNotNull(value, context);
+//		validateInputNotNull(value, context);
+		if ( value == null ) {
+			value = new String("-9999");
+		}
+		
 		if( value instanceof String ) {
 			String sValue = (String) value;
 			if( sValue.equalsIgnoreCase("infinity") ){

@@ -26,7 +26,11 @@ public class ParseEnumExt implements CellProcessor {
 	@Override
 	@SuppressWarnings("unchecked")
 	public Object execute(Object value, CsvContext context) {
-		validateInputNotNull(value, context);
+//		validateInputNotNull(value, context);
+		if ( value == null ) {
+			value = new String("Null");
+		}
+		
 		Character c = value.toString().toCharArray()[0];
 		String inputString;
 		if (Character.isDigit(c)) {

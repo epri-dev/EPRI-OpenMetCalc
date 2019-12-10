@@ -144,6 +144,11 @@ public class MetricManager {
 				factor.setName(eleFactor.getAttribute(METRIC_CONFIG_ATTRNAME_NAME));
 				factor.setDescription(eleFactor.getAttribute(METRIC_CONFIG_ATTRNAME_DESCRIPTION));
 				factor.setValue(eleFactor.getAttribute(METRIC_CONFIG_ATTRNAME_VALUE));
+				if (factor.getName().contains("-T-") || factor.getName().contains("-O-") ) {
+					factor.setMetric(true);
+				} else {
+					factor.setMetric(false);
+				}
 				metric.addFactor(factor);
 			}
 

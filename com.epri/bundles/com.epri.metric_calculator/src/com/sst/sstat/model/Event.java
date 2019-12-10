@@ -4,13 +4,13 @@ import java.io.Serializable;
 import java.util.Date;
 @SuppressWarnings("serial")
 public class Event implements IDataPointScope {
-	public enum Level implements Serializable {
-		Low, Medium, High
+	public enum Severity implements Serializable {
+		Low, Med, High, Null
 	};
 
 	private String EID;
 	private String E01;
-	private Level E02;
+	private Severity E02;
 	private Date E03;
 	private Date E04;
 	private BoolEx E05;
@@ -37,11 +37,11 @@ public class Event implements IDataPointScope {
 		E01 = e01;
 	}
 
-	public Level getE02() {
+	public Severity getE02() {
 		return E02;
 	}
 
-	public void setE02(Level e02) {
+	public void setE02(Severity e02) {
 		E02 = e02;
 	}
 

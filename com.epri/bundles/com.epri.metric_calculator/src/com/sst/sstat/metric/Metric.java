@@ -62,7 +62,7 @@ public class Metric implements Serializable {
 	public void addFactor(Factor factor) {
 		factors.add(factor);
 	}
-
+	
 	public String getName() {
 		return name;
 	}
@@ -81,6 +81,16 @@ public class Metric implements Serializable {
 
 	public List<Factor> getFactors() {
 		return factors;
+	}
+	
+	public List<Factor> getPureFactors() {
+		List<Factor> pureFactors = new ArrayList<>();
+		for ( Factor factor: factors ) {
+			if ( !factor.isMetric() ) {
+				pureFactors.add(factor);
+			}
+		}
+		return pureFactors;
 	}
 
 	public String getFormulaName() {

@@ -4,28 +4,21 @@ import java.io.Serializable;
 import java.util.Date;
 @SuppressWarnings("serial")
 public class Incident implements IDataPointScope {
-	public enum Level implements Serializable {
-		Low, Med, High
+	public enum SeverityRating implements Serializable {
+		Low, Med, High, Null
 	};
 
-	public enum CategoryOfI18 {
+	public enum FirstNoticed {
 		unknown,
-
 		public_disclosure,
-
 		adversary_notification,
-
 		law_enforcement_compromise_notification,
-
 		malfunction_of_resource,
-
 		non_security_staff_report,
-
 		security_staff_report,
-
 		threat_hunting_process,
-
-		alert_event_generated_by_security_software_hardware
+		alert_event_generated_by_security_software_hardware,
+		Null
 	}
 
 	@Override
@@ -48,12 +41,8 @@ public class Incident implements IDataPointScope {
 	private BoolEx I12;
 	private BoolEx I13;
 	private BoolEx I14;
-	private Level I15;
-	private double I16;
-	private double I17;
-
-	private CategoryOfI18 I18;
-
+	private SeverityRating I15;
+	private FirstNoticed I18;
 	private String I19;
 
 	/**
@@ -284,7 +273,7 @@ public class Incident implements IDataPointScope {
 	/**
 	 * @return the i15
 	 */
-	public Level getI15() {
+	public SeverityRating getI15() {
 		return I15;
 	}
 
@@ -292,44 +281,15 @@ public class Incident implements IDataPointScope {
 	 * @param i15
 	 *            the i15 to set
 	 */
-	public void setI15(Level i15) {
+	public void setI15(SeverityRating i15) {
 		I15 = i15;
 	}
 
-	/**
-	 * @return the i16
-	 */
-	public double getI16() {
-		return I16;
-	}
-
-	/**
-	 * @param i16
-	 *            the i16 to set
-	 */
-	public void setI16(double i16) {
-		I16 = i16;
-	}
-
-	/**
-	 * @return the i17
-	 */
-	public double getI17() {
-		return I17;
-	}
-
-	/**
-	 * @param i17
-	 *            the i17 to set
-	 */
-	public void setI17(double i17) {
-		I17 = i17;
-	}
 
 	/**
 	 * @return the i18
 	 */
-	public CategoryOfI18 getI18() {
+	public FirstNoticed getI18() {
 		return I18;
 	}
 
@@ -337,7 +297,7 @@ public class Incident implements IDataPointScope {
 	 * @param i18
 	 *            the i18 to set
 	 */
-	public void setI18(CategoryOfI18 i18) {
+	public void setI18(FirstNoticed i18) {
 		I18 = i18;
 	}
 

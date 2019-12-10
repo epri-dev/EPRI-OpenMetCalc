@@ -89,7 +89,8 @@ public class MetricView extends ViewPart {
 		// Compute max number of factor
 		int maxNumOfFactor = 5;
 		for (Metric metric : metricManager.getMetrics()) {
-			int numOfFactor = metric.getFactors().size();
+//			int numOfFactor = metric.getFactors().size();
+			int numOfFactor = metric.getPureFactors().size();
 			if (maxNumOfFactor < numOfFactor) {
 				maxNumOfFactor = numOfFactor;
 			}
@@ -455,8 +456,10 @@ public class MetricView extends ViewPart {
 
 			@Override
 			protected String getToolTipText(Metric metric) {
-				if (indexOfFactor < metric.getFactors().size()) {
-					return metric.getFactors().get(indexOfFactor).getDescription();
+				List<Factor> pureFactor = metric.getPureFactors();
+				
+				if (indexOfFactor < pureFactor.size()) {
+					return pureFactor.get(indexOfFactor).getDescription();
 				}
 
 				return super.getToolTipText(metric);
@@ -615,7 +618,7 @@ public class MetricView extends ViewPart {
 		public boolean canModify(TreeItem item, int columnIndex) {
 			MetricRelationshipModel model = (MetricRelationshipModel) item.getData();
 			Metric metric = model.getMetric();
-			if (this.index < metric.getFactors().size()) {
+			if (this.index < metric.getPureFactors().size()) {
 				return true;
 			} else {
 				return false;

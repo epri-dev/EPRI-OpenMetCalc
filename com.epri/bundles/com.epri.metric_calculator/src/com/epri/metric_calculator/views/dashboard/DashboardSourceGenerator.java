@@ -1,5 +1,9 @@
 package com.epri.metric_calculator.views.dashboard;
 
+import static j2html.TagCreator.table;
+import static j2html.TagCreator.td;
+import static j2html.TagCreator.tr;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -23,7 +27,6 @@ import com.sst.sstat.metric.MetricRelationshipModel;
 import com.sst.sstat.metric.MetricType;
 
 import j2html.TagCreator;
-import static j2html.TagCreator.*;
 import j2html.tags.ContainerTag;
 import j2html.tags.DomContent;
 
@@ -139,28 +142,21 @@ public class DashboardSourceGenerator {
 			firstTd.attr("rowspan", Integer.toString(operationalMetricModels.size()));
 			firstTd.withStyle("text-align:center;");
 			tdList.add(firstTd);
+			
+			// Generate the Metric Table on the right side of dashboard perspective
 			for (MetricRelationshipModel operationalMetricModel : operationalMetricModels) {
 				Metric operationalMetric = operationalMetricModel.getMetric();
-
-				DomContent[] tooltipContents = {
-						text(operationalMetric.getId() + "(" + operationalMetric.getName() + ")"), br() };
-
-				int lineLength = 100;
-				List<String> descriptionLines = new ArrayList<>();
-				for (int i = 0; i * lineLength < operationalMetric.getDescription().length(); i++) {
-					if (operationalMetric.getDescription().length() - (i + 1) * lineLength > 0) {
-						descriptionLines.add(
-								operationalMetric.getDescription().substring(i * lineLength, (i + 1) * lineLength));
-					} else {
-						descriptionLines.add(operationalMetric.getDescription().substring(i * lineLength,
-								operationalMetric.getDescription().length() - 1));
-					}
-				}
-				DomContent[] description = multiLineText(descriptionLines.toArray(new String[descriptionLines.size()]));
-				tooltipContents = appendContents(tooltipContents, description);
-
-				tdList.add(td(TagCreator.text(operationalMetric.getName()),
-						TagCreator.span(tooltipContents).withClass("tooltiptext")));
+				StringBuffer bf = new StringBuffer();
+				bf.append(operationalMetric.getId());
+				bf.append("(");
+				bf.append(operationalMetric.getName());
+				bf.append(")");
+				bf.append(System.lineSeparator());
+				bf.append(operationalMetric.getDescription());
+				
+				ContainerTag metricTd = td(TagCreator.text(operationalMetric.getName()));
+				metricTd.attr("title", bf.toString());
+				tdList.add(metricTd);
 
 				DomContent td = td(TagCreator.text(operationalMetric.getValueString())).attr("style",
 						"text-align:center");
@@ -338,29 +334,6 @@ public class DashboardSourceGenerator {
 
 		return String.format(FORMAT_TACTICAL_METRICS, ids, names, value.toString(), refValueLines, targetValueLines,
 				refValues, targetValues);
-	}
-
-	private DomContent[] multiLineText(String... lines) {
-		List<DomContent> result = new ArrayList<>();
-
-		result.add(TagCreator.text(lines[0]));
-		for (int i = 1; i < lines.length; i++) {
-			result.add(TagCreator.br());
-			result.add(TagCreator.text(lines[i]));
-		}
-
-		return result.toArray(new DomContent[lines.length]);
-	}
-
-	private DomContent[] appendContents(DomContent[] contents1, DomContent... contents2) {
-		DomContent[] result = new DomContent[contents1.length + contents2.length];
-		for (int i = 0; i < contents1.length; i++) {
-			result[i] = contents1[i];
-		}
-		for (int i = 0; i < contents2.length; i++) {
-			result[contents1.length + i] = contents2[i];
-		}
-		return result;
 	}
 
 	private String withQuotes(String text) {

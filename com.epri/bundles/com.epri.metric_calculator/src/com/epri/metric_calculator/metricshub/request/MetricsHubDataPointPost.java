@@ -16,6 +16,8 @@ import org.apache.http.message.BasicHeader;
 
 import com.epri.metric_calculator.MetCalcProject;
 import com.google.gson.Gson;
+import com.sst.sstat.model.WirelessNetworkAccess;
+import com.sst.sstat.model.WirelessNetworkAccessData;
 
 /**
  * Post request that upload data to Metrics Hub
@@ -79,7 +81,17 @@ public class MetricsHubDataPointPost extends HttpPost {
 		MetCalcProject currentProject = MetCalcProject.getCurrent();
 		Map<String, List<Object>> dataPoints = new HashMap<>();
 		for (Class<?> modelClass : selectedModels) {
-			dataPoints.put(modelClass.getSimpleName(), currentProject.get(modelClass));
+			if (modelClass.getSimpleName().equals("WirelessNetworkAccess") ) {
+				List<Object> replacedModels = new ArrayList<Object>();
+				List<Object> models = currentProject.get(modelClass);
+				
+				for ( Object model : models ) {
+					replacedModels.add(new WirelessNetworkAccessData((WirelessNetworkAccess) model));
+				}
+				dataPoints.put(modelClass.getSimpleName(), replacedModels);	
+			} else {
+				dataPoints.put(modelClass.getSimpleName(), currentProject.get(modelClass));	
+			}
 		}
 		
 		// jsonize

@@ -183,6 +183,10 @@
             class="com.epri.metric_calculator.splashHandlers.InteractiveSplashHandler"
             id="com.epri.metric_calculator.splashHandlers.interactive">
       </splashHandler>
+      <splashHandlerProductBinding
+            productId="com.epri.metric_calculator.product"
+            splashId="com.epri.metric_calculator.splashHandlers.interactive">
+      </splashHandlerProductBinding>
    </extension>
    <extension
          id="product"

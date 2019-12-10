@@ -7,9 +7,6 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.supercsv.cellprocessor.Optional;
-import org.supercsv.cellprocessor.ParseDate;
-import org.supercsv.cellprocessor.ParseDouble;
 import org.supercsv.cellprocessor.ParseLong;
 import org.supercsv.cellprocessor.constraint.NotNull;
 import org.supercsv.cellprocessor.ift.CellProcessor;
@@ -20,6 +17,8 @@ import org.supercsv.prefs.CsvPreference;
 
 import com.epri.metric_calculator.Const;
 import com.sst.sstat.parser.ParseBoolExt;
+import com.sst.sstat.parser.ParseDateExt;
+import com.sst.sstat.parser.ParseDoubleExt;
 import com.sst.sstat.parser.ParseEnumExt;
 import com.sst.sstat.parser.ParseIntegerExt;
 
@@ -135,9 +134,9 @@ public class CsvImpoter {
 			} else if (fType.getTypeName().contains("boolean")) {
 				processorList.add(new ParseBoolExt());
 			} else if (fType.getTypeName().contains("double")) {
-				processorList.add(new ParseDouble());
+				processorList.add(new ParseDoubleExt());
 			} else if (fType.getTypeName().contains("Date")) {
-				processorList.add(new Optional(new ParseDate("yyyy-MM-dd")));
+				processorList.add(new ParseDateExt());
 			} else {
 				processorList.add(new NotNull());
 			}

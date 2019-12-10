@@ -1,34 +1,8 @@
 package com.sst.sstat.model;
 
-import java.io.Serializable;
-
 @SuppressWarnings("serial")
-public class NetworkAccessPoint implements IDataPointScope {
-	public enum Protocol implements Serializable {
-		_802_11a, _802_11b, _802_11g, _802_11n, _802_11ac, _802_11ad, other, Null
-	};
-
-	public enum Encryption implements Serializable {
-		none, WEP, WPA, WPA2_Preshared, WPA2_Enterprise, Other, NA
-	};
-
-	public enum AntennaType implements Serializable {
-		Omni_directional,
-		directional,
-		point_to_point,
-		Other,
-		NA
-	};
-
-	public enum Frequency implements Serializable {
-		none,
-		FH_CDMA,
-		AFH,
-		Cognitive,
-		Other,
-		NA
-	}
-
+public class NetworkAccessPoint implements IDataPointScope 
+{
 	private String NID;
 	private int N01;
 	private int N02;
@@ -39,11 +13,8 @@ public class NetworkAccessPoint implements IDataPointScope {
 	private int N07;
 	private int N08;
 	private int N09;
-	private BoolEx N10;
-	private Protocol N11;
-	private double N12;
+	private String N10;
 	private BoolEx N16;
-	private String N17;
 
 	@Override
 	public String getId() {
@@ -203,7 +174,7 @@ public class NetworkAccessPoint implements IDataPointScope {
 	/**
 	 * @return the n10
 	 */
-	public BoolEx getN10() {
+	public String getN10() {
 		return N10;
 	}
 
@@ -211,38 +182,8 @@ public class NetworkAccessPoint implements IDataPointScope {
 	 * @param n10
 	 *            the n10 to set
 	 */
-	public void setN10(BoolEx n10) {
+	public void setN10(String n10) {
 		N10 = n10;
-	}
-
-	/**
-	 * @return the n11
-	 */
-	public Protocol getN11() {
-		return N11;
-	}
-
-	/**
-	 * @param n11
-	 *            the n11 to set
-	 */
-	public void setN11(Protocol n11) {
-		N11 = n11;
-	}
-
-	/**
-	 * @return the n12
-	 */
-	public double getN12() {
-		return N12;
-	}
-
-	/**
-	 * @param n12
-	 *            the n12 to set
-	 */
-	public void setN12(double n12) {
-		N12 = n12;
 	}
 
 	/**
@@ -258,20 +199,5 @@ public class NetworkAccessPoint implements IDataPointScope {
 	 */
 	public void setN16(BoolEx n16) {
 		N16 = n16;
-	}
-
-	/**
-	 * @return the n17
-	 */
-	public String getN17() {
-		return N17;
-	}
-
-	/**
-	 * @param n17
-	 *            the n17 to set
-	 */
-	public void setN17(String n17) {
-		N17 = n17;
 	}
 }

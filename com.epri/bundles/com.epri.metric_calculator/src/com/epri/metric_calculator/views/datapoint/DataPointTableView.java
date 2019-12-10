@@ -128,38 +128,77 @@ public class DataPointTableView extends ViewPart {
 	 * @param item
 	 */
 	private void addItem(Object item) {
-		// Get fields of item class
-		Field[] fields = item.getClass().getDeclaredFields();
+	// Get fields of item class
+	boolean isYtable = item.getClass().toString().equals("class com.sst.sstat.model.WirelessNetworkAccess");
+	Field[] fields = item.getClass().getDeclaredFields();
 
-		String[] itemTexts = new String[fields.length];
-		for (int i = 0; i < fields.length; i++) {
-			Field field = fields[i];
-			String itemText = null;
-			// Get field value
-			Object retValue = ReflectionUtil.invokeGetter(item, field.getType(), field.getName());
-			if (retValue == null) {
-				itemText = TABLE_ITEM_EMPTY_VALUE;
-			} else {
+	String[] itemTexts = new String[fields.length];
+	for (int i = 0; i < fields.length; i++) {
+		Field field = fields[i];
+		String itemText = null;
+		// Get field value
+		Object retValue = ReflectionUtil.invokeGetter(item, field.getType(), field.getName());
+		if (retValue == null) {
+			itemText = TABLE_ITEM_EMPTY_VALUE;
+		} else {
 
-				// Run table item text formatters
-				for (TableItemTextFormatter<?> formatter : formatters) {
-					itemText = formatter.run(retValue);
+			// Run table item text formatters
+			for (TableItemTextFormatter<?> formatter : formatters) {
+				itemText = formatter.run(retValue);
 
-					if (itemText != null)
-						break;
-				}
-
-				// If no formatter for this type
-				if (itemText == null)
-					itemText = retValue.toString();
+				if (itemText != null)
+					break;
 			}
 
-			itemTexts[i] = itemText;
+			// If no formatter for this type
+			if (itemText == null) {
+				itemText = retValue.toString();
+			}
 		}
 
-		TableItem tableItem = new TableItem(table, SWT.NONE);
-		tableItem.setText(itemTexts);
+		if (isYtable) {
+			itemText = itemText.replace('_', '-');
+		}
+		itemTexts[i] = itemText;
 	}
+
+	TableItem tableItem = new TableItem(table, SWT.NONE);
+	tableItem.setText(itemTexts);
+}
+
+//	private void addItem(Object item) {
+//		// Get fields of item class
+//		Field[] fields = item.getClass().getDeclaredFields();
+//
+//		String[] itemTexts = new String[fields.length];
+//		for (int i = 0; i < fields.length; i++) {
+//			Field field = fields[i];
+//			String itemText = null;
+//			// Get field value
+//			Object retValue = ReflectionUtil.invokeGetter(item, field.getType(), field.getName());
+//			if (retValue == null) {
+//				itemText = TABLE_ITEM_EMPTY_VALUE;
+//			} else {
+//
+//				// Run table item text formatters
+//				for (TableItemTextFormatter<?> formatter : formatters) {
+//					itemText = formatter.run(retValue);
+//
+//					if (itemText != null)
+//						break;
+//				}
+//
+//				// If no formatter for this type
+//				if (itemText == null)
+//					itemText = retValue.toString();
+//			}
+//
+//			itemTexts[i] = itemText;
+//		}
+//
+//		TableItem tableItem = new TableItem(table, SWT.NONE);
+//		tableItem.setText(itemTexts);
+//	}
 
 	/**
 	 * Optimize all column widths

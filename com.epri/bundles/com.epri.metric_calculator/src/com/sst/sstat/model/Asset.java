@@ -3,15 +3,16 @@ package com.sst.sstat.model;
 @SuppressWarnings("serial")
 public class Asset implements IDataPointScope {
 
+//	public enum AssetCriticalityRating implements Serializable {
+//		Low, Med, High, Null
+//	};
+	
 	private String AID;
 	private int A01;
-	private BoolEx A02;
-	private BoolEx A03;
 	private int A04;
-	private int A05;
-	private int A06;
 	private int A07;
-	private int A08;
+//	private AssetCriticalityRating A08; // need to changing
+	private int A08; // need to changing
 	private int A09;
 	private int A10;
 	private int A11;
@@ -60,35 +61,6 @@ public class Asset implements IDataPointScope {
 		A01 = a01;
 	}
 
-	/**
-	 * @return the a02
-	 */
-	public BoolEx getA02() {
-		return A02;
-	}
-
-	/**
-	 * @param a02
-	 *            the a02 to set
-	 */
-	public void setA02(BoolEx a02) {
-		A02 = a02;
-	}
-
-	/**
-	 * @return the a03
-	 */
-	public BoolEx getA03() {
-		return A03;
-	}
-
-	/**
-	 * @param a03
-	 *            the a03 to set
-	 */
-	public void setA03(BoolEx a03) {
-		A03 = a03;
-	}
 
 	/**
 	 * @return the a04
@@ -105,35 +77,6 @@ public class Asset implements IDataPointScope {
 		A04 = a04;
 	}
 
-	/**
-	 * @return the a05
-	 */
-	public int getA05() {
-		return A05;
-	}
-
-	/**
-	 * @param a05
-	 *            the a05 to set
-	 */
-	public void setA05(int a05) {
-		A05 = a05;
-	}
-
-	/**
-	 * @return the a06
-	 */
-	public int getA06() {
-		return A06;
-	}
-
-	/**
-	 * @param a06
-	 *            the a06 to set
-	 */
-	public void setA06(int a06) {
-		A06 = a06;
-	}
 
 	/**
 	 * @return the a07

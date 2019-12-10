@@ -1,10 +1,6 @@
 package com.epri.metric_calculator.actions.recalculation;
 
-import org.eclipse.jface.dialogs.MessageDialog;
-import org.eclipse.swt.widgets.Display;
-
 import com.epri.metric_calculator.IconFactory;
-import com.epri.metric_calculator.Messages;
 import com.epri.metric_calculator.MetCalcProject;
 import com.epri.metric_calculator.NoProjectMessageDialog;
 import com.epri.metric_calculator.actions.AbstractAction;

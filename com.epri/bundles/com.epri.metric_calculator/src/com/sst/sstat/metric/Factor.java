@@ -10,6 +10,8 @@ public class Factor implements Serializable {
 	private String description;
 
 	private Float value;
+	
+	private boolean isMetric;
 
 	public String getDescription() {
 		return description;
@@ -41,5 +43,13 @@ public class Factor implements Serializable {
 		} else {
 			this.value = Float.valueOf(value);
 		}
+	}
+
+	public boolean isMetric() {
+		return isMetric;
+	}
+
+	public void setMetric(boolean isMetric) {
+		this.isMetric = isMetric;
 	}
 }

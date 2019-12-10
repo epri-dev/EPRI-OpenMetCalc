@@ -6,7 +6,7 @@ import java.io.Serializable;
 public class WirelessNetworkAccess implements IDataPointScope {
 
 	public enum Encryption implements Serializable {
-		WEP, WPA, WPA2_Preshared, WPA2_Enterprise
+		none, WEP, WPA, WPA2_Preshared, WPA2_Enterprise, Other, NA, Null
 	};
 
 	public enum AntennaType implements Serializable {
@@ -14,20 +14,18 @@ public class WirelessNetworkAccess implements IDataPointScope {
 		directional,
 		point_to_point,
 		Other,
-		NA
+		NA,
+		Null
 	};	
 
-	public enum Frequency implements Serializable {
-		FH_CDMA,
-		AFH,
-		Cognitive,
-		Other
-	}
+	public enum FrequencyHopping implements Serializable {
+		none, FH_CDMA, AFH, Cognitive, Other, NA, Null
+	};
 	
 	private String YID;
 	private Encryption Y01;
 	private AntennaType Y02;
-	private Frequency Y03;
+	private FrequencyHopping Y03;
 	private String Y04;
 	
 	@Override
@@ -60,11 +58,11 @@ public class WirelessNetworkAccess implements IDataPointScope {
 		Y02 = y02;
 	}
 
-	public Frequency getY03() {
+	public FrequencyHopping getY03() {
 		return Y03;
 	}
 
-	public void setY03(Frequency y03) {
+	public void setY03(FrequencyHopping y03) {
 		Y03 = y03;
 	}
 

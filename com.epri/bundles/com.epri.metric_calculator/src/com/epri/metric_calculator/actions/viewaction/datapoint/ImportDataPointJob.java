@@ -69,9 +69,7 @@ public class ImportDataPointJob extends Job {
 						if (containIndex > -1) {
 							// It contains data of the same id.
 							prj.replace(itemClass, containIndex, o);
-							consoleView.warning(String.format(
-									"It contains data of the same id. Overwritten with new values. ID = %s",
-									dps.getId()));
+//							consoleView.warning(String.format("It contains data of the same id. Overwritten with new values. ID = %s", dps.getId()));
 						} else {
 							// It does not contain data of the same id.
 							prj.append(itemClass, o);

@@ -5,17 +5,15 @@ public class EmailServerFilter implements IDataPointScope {
 
 	private String MID;
 	private int M01;
-	private int M02;
 	private int M03;
 	private int M04;
 	private int M05;
-	private int M06;
 	private int M07;
 	private int M08;
-	private int M09;
 	private int M10;
 	private String M11;
-
+	private String M12;
+	
 	@Override
 	public String getId() {
 		return MID;
@@ -49,21 +47,6 @@ public class EmailServerFilter implements IDataPointScope {
 	 */
 	public void setM01(int m01) {
 		M01 = m01;
-	}
-
-	/**
-	 * @return the m02
-	 */
-	public int getM02() {
-		return M02;
-	}
-
-	/**
-	 * @param m02
-	 *            the m02 to set
-	 */
-	public void setM02(int m02) {
-		M02 = m02;
 	}
 
 	/**
@@ -110,22 +93,7 @@ public class EmailServerFilter implements IDataPointScope {
 	public void setM05(int m05) {
 		M05 = m05;
 	}
-
-	/**
-	 * @return the m06
-	 */
-	public int getM06() {
-		return M06;
-	}
-
-	/**
-	 * @param m06
-	 *            the m06 to set
-	 */
-	public void setM06(int m06) {
-		M06 = m06;
-	}
-
+	
 	/**
 	 * @return the m07
 	 */
@@ -156,20 +124,6 @@ public class EmailServerFilter implements IDataPointScope {
 		M08 = m08;
 	}
 
-	/**
-	 * @return the m09
-	 */
-	public int getM09() {
-		return M09;
-	}
-
-	/**
-	 * @param m09
-	 *            the m09 to set
-	 */
-	public void setM09(int m09) {
-		M09 = m09;
-	}
 
 	/**
 	 * @return the m10
@@ -199,5 +153,13 @@ public class EmailServerFilter implements IDataPointScope {
 	 */
 	public void setM11(String m11) {
 		M11 = m11;
+	}
+
+	public String getM12() {
+		return M12;
+	}
+
+	public void setM12(String m12) {
+		M12 = m12;
 	}
 }

@@ -3,26 +3,26 @@ package com.sst.sstat.model;
 import java.io.Serializable;
 @SuppressWarnings("serial")
 public class EndUserDevice implements IDataPointScope {
-	public enum UpdateFrequency implements Serializable {
-		none, min, hour, day, week
+	public enum AntivirusSignatureUpdateFrequency implements Serializable {
+		none, min, hour, day, week, Null
 	};
 
-	public enum ScanFrequency implements Serializable {
-		none, on_access, min, hour, day, week
+	public enum AntivirusScanFrequency implements Serializable {
+		none, on_access, min, hour, day, week, Null		
 	}
 
 	public enum Encryption implements Serializable {
-		none, mandatory, discretionary, no_encryption, Null
+		none, mandatory, discretionary, no_encryption, NA, Null
 	};
 
 	public enum HIDSManagement implements Serializable {
-		Null, mandatory, discretionary
+		none, mandatory, discretionary, Null
 	};
 
 
 	private String UID;
-	private UpdateFrequency U01;
-	private ScanFrequency U02;
+	private AntivirusSignatureUpdateFrequency U01;
+	private AntivirusScanFrequency U02;
 	private double U03;
 	private double U04;
 	private Encryption U05;
@@ -57,7 +57,7 @@ public class EndUserDevice implements IDataPointScope {
 	/**
 	 * @return the u01
 	 */
-	public UpdateFrequency getU01() {
+	public AntivirusSignatureUpdateFrequency getU01() {
 		return U01;
 	}
 
@@ -65,14 +65,14 @@ public class EndUserDevice implements IDataPointScope {
 	 * @param u01
 	 *            the u01 to set
 	 */
-	public void setU01(UpdateFrequency u01) {
+	public void setU01(AntivirusSignatureUpdateFrequency u01) {
 		U01 = u01;
 	}
 
 	/**
 	 * @return the u02
 	 */
-	public ScanFrequency getU02() {
+	public AntivirusScanFrequency getU02() {
 		return U02;
 	}
 
@@ -80,7 +80,7 @@ public class EndUserDevice implements IDataPointScope {
 	 * @param u02
 	 *            the u02 to set
 	 */
-	public void setU02(ScanFrequency u02) {
+	public void setU02(AntivirusScanFrequency u02) {
 		U02 = u02;
 	}
 

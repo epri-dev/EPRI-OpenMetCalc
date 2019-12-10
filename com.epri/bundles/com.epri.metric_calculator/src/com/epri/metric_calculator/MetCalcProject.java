@@ -257,7 +257,7 @@ public class MetCalcProject implements Serializable, Cloneable {
 		List<Object> dpList = contents.get(dpsType);
 		for (int i = 0; i < dpList.size(); i++) {
 			IDataPointScope dps1 = (IDataPointScope) dpList.get(i);
-			if (dps.getId() == dps1.getId()) {
+			if ( dps.getId().equals(dps1.getId()) ) {
 				return i;
 			}
 		}

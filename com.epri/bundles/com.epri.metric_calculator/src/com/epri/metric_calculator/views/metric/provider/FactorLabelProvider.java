@@ -35,13 +35,13 @@ public abstract class FactorLabelProvider extends MetricTreeLabelProvider {
 	@Override
 	public String getText(Object element) {
 		MetricRelationshipModel model = (MetricRelationshipModel) element;
-		List<Factor> factors = model.getMetric().getFactors();
+		List<Factor> pureFactors = model.getMetric().getPureFactors();
 
-		if (indexOfFactor + 1 > factors.size()) {
+		if (indexOfFactor + 1 > pureFactors.size()) {
 			return null;
 		}
 
-		return getText(factors.get(indexOfFactor));
+		return getText(pureFactors.get(indexOfFactor));
 	}
 
 	@Override

@@ -4,16 +4,17 @@ import java.io.Serializable;
 
 @SuppressWarnings("serial")
 public class Personnel implements IDataPointScope {
-	public enum Term implements Serializable {
+	public enum LastSecurityAwarenessTraining implements Serializable {
 		Less_Than_One_Week,
 		Less_Than_One_Month,
 		Less_Than_Three_Months,
 		More_Than_Three_Months,
-		never
+		never,
+		Null
 	};
 
 	private String PID;
-	private Term P01;
+	private LastSecurityAwarenessTraining P01;
 	private BoolEx P02;
 	private BoolEx P03;
 	private BoolEx P04;
@@ -45,7 +46,7 @@ public class Personnel implements IDataPointScope {
 	/**
 	 * @return the p01
 	 */
-	public Term getP01() {
+	public LastSecurityAwarenessTraining getP01() {
 		return P01;
 	}
 
@@ -53,7 +54,7 @@ public class Personnel implements IDataPointScope {
 	 * @param p01
 	 *            the p01 to set
 	 */
-	public void setP01(Term p01) {
+	public void setP01(LastSecurityAwarenessTraining p01) {
 		P01 = p01;
 	}
 
